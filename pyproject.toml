@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "argvsucks"
-version = "0.230725.2"
+version = "0.230725.3"
 description = ""
 authors = ["davips <dpsabc@gmail.com>"]
 readme = "README.md"
 packages = [{include = "argvsucks", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 
 
 [tool.poetry.group.dev.dependencies]
