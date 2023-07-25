@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "argvsucks"
-version = "0.230725.3"
+version = "0.230725.4"
 description = ""
 authors = ["davips <dpsabc@gmail.com>"]
 readme = "README.md"
