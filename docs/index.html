@@ -30,8 +30,8 @@
     &#34;&#34;&#34;
     All arguments are keyworded, except boolean ones.
 
-    &gt;&gt;&gt; handle_command_line([&#34;program ···&#34;, &#34;start&#34;, &#34;end=0&#34;, &#34;finish&#34;, &#34;n=5&#34;, &#34;name=Foo&#34;, &#34;lst=a,b,c&#34;, &#34;v=0.3&#34;], n=int, start=False, end=bool, lst=list, v=float)
-    {&#39;start&#39;: True, &#39;end&#39;: False, &#39;finish&#39;: True, &#39;n&#39;: 5, &#39;name&#39;: &#39;Foo&#39;, &#39;lst&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], &#39;v&#39;: 0.3}
+    &gt;&gt;&gt; handle_command_line([&#34;program ···&#34;, &#34;start&#34;, &#34;end=0&#34;, &#34;finish&#34;, &#34;n=5&#34;, &#34;name=Foo&#34;, &#34;lst=a,b,c&#34;, &#34;v=0.3&#34;, &#34;txt=text&#34;], n=int, start=False, end=bool, lst=list, v=float, txt=str)
+    {&#39;start&#39;: True, &#39;end&#39;: False, &#39;finish&#39;: True, &#39;n&#39;: 5, &#39;name&#39;: &#39;Foo&#39;, &#39;lst&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], &#39;v&#39;: 0.3, &#39;txt&#39;: &#39;text&#39;}
     &#34;&#34;&#34;
     kwargs = {}
 
@@ -46,6 +46,8 @@
             if k in types:
                 if types[k] == int:
                     kwargs[k] = int(v)
+                elif types[k] == str:
+                    kwargs[k] = v
                 elif types[k] == float:
                     kwargs[k] = float(v)
                 elif types[k] == bool:
@@ -74,8 +76,8 @@
 </code></dt>
 <dd>
 <div class="desc"><p>All arguments are keyworded, except boolean ones.</p>
-<pre><code class="language-python-repl">&gt;&gt;&gt; handle_command_line([&quot;program ···&quot;, &quot;start&quot;, &quot;end=0&quot;, &quot;finish&quot;, &quot;n=5&quot;, &quot;name=Foo&quot;, &quot;lst=a,b,c&quot;, &quot;v=0.3&quot;], n=int, start=False, end=bool, lst=list, v=float)
-{'start': True, 'end': False, 'finish': True, 'n': 5, 'name': 'Foo', 'lst': ['a', 'b', 'c'], 'v': 0.3}
+<pre><code class="language-python-repl">&gt;&gt;&gt; handle_command_line([&quot;program ···&quot;, &quot;start&quot;, &quot;end=0&quot;, &quot;finish&quot;, &quot;n=5&quot;, &quot;name=Foo&quot;, &quot;lst=a,b,c&quot;, &quot;v=0.3&quot;, &quot;txt=text&quot;], n=int, start=False, end=bool, lst=list, v=float, txt=str)
+{'start': True, 'end': False, 'finish': True, 'n': 5, 'name': 'Foo', 'lst': ['a', 'b', 'c'], 'v': 0.3, 'txt': 'text'}
 </code></pre></div>
 <details class="source">
 <summary>
@@ -85,8 +87,8 @@
     &#34;&#34;&#34;
     All arguments are keyworded, except boolean ones.
 
-    &gt;&gt;&gt; handle_command_line([&#34;program ···&#34;, &#34;start&#34;, &#34;end=0&#34;, &#34;finish&#34;, &#34;n=5&#34;, &#34;name=Foo&#34;, &#34;lst=a,b,c&#34;, &#34;v=0.3&#34;], n=int, start=False, end=bool, lst=list, v=float)
-    {&#39;start&#39;: True, &#39;end&#39;: False, &#39;finish&#39;: True, &#39;n&#39;: 5, &#39;name&#39;: &#39;Foo&#39;, &#39;lst&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], &#39;v&#39;: 0.3}
+    &gt;&gt;&gt; handle_command_line([&#34;program ···&#34;, &#34;start&#34;, &#34;end=0&#34;, &#34;finish&#34;, &#34;n=5&#34;, &#34;name=Foo&#34;, &#34;lst=a,b,c&#34;, &#34;v=0.3&#34;, &#34;txt=text&#34;], n=int, start=False, end=bool, lst=list, v=float, txt=str)
+    {&#39;start&#39;: True, &#39;end&#39;: False, &#39;finish&#39;: True, &#39;n&#39;: 5, &#39;name&#39;: &#39;Foo&#39;, &#39;lst&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], &#39;v&#39;: 0.3, &#39;txt&#39;: &#39;text&#39;}
     &#34;&#34;&#34;
     kwargs = {}
 
@@ -101,6 +103,8 @@
             if k in types:
                 if types[k] == int:
                     kwargs[k] = int(v)
+                elif types[k] == str:
+                    kwargs[k] = v
                 elif types[k] == float:
                     kwargs[k] = float(v)
                 elif types[k] == bool:

@@ -2,8 +2,8 @@ def handle_command_line(arguments, **defaults_or_types):
     """
     All arguments are keyworded, except boolean ones.
 
-    >>> handle_command_line(["program ···", "start", "end=0", "finish", "n=5", "name=Foo", "lst=a,b,c", "v=0.3"], n=int, start=False, end=bool, lst=list, v=float)
-    {'start': True, 'end': False, 'finish': True, 'n': 5, 'name': 'Foo', 'lst': ['a', 'b', 'c'], 'v': 0.3}
+    >>> handle_command_line(["program ···", "start", "end=0", "finish", "n=5", "name=Foo", "lst=a,b,c", "v=0.3", "txt=text"], n=int, start=False, end=bool, lst=list, v=float, txt=str)
+    {'start': True, 'end': False, 'finish': True, 'n': 5, 'name': 'Foo', 'lst': ['a', 'b', 'c'], 'v': 0.3, 'txt': 'text'}
     """
     kwargs = {}
 
@@ -18,6 +18,8 @@ def handle_command_line(arguments, **defaults_or_types):
             if k in types:
                 if types[k] == int:
                     kwargs[k] = int(v)
+                elif types[k] == str:
+                    kwargs[k] = v
                 elif types[k] == float:
                     kwargs[k] = float(v)
                 elif types[k] == bool:
